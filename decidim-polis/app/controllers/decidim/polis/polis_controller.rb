@@ -6,9 +6,10 @@ module Decidim
     class PolisController < Decidim::Polis::ApplicationController
       def show
         @feature = Feature.find(params[:feature_id])
-        @ucw = @feature.settings.user_can_write?
-        @ucv = @feature.settings.user_can_vote?
-        @show_vis = @feature.settings.visualization?
+        settings = @feature.settings
+        @ucw = settings.user_can_write?
+        @ucv = settings.user_can_vote?
+        @show_vis = settings.visualization?
       end
     end
   end
