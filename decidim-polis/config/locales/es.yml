@@ -5,3 +5,9 @@ es:
       features:
         polis:
           name: Visualizaciones del PAM
+          settings:
+            global:
+              user_can_write: L'utilisateur peut rédiger un commentaire
+              user_can_vote: L'utilisateur peut voter
+              visualization: L'utilisateur peut voir toutes les conversations
+
