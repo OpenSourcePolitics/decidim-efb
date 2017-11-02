@@ -7,16 +7,12 @@ module Decidim
       isolate_namespace Decidim::Polis
 
       routes do
-        resources :polis, only: [:index, :show]
-        root to: "polis#index"
+        resources :polis, only: [:show]
+        root to: "polis#show"
       end
 
       initializer "decidim_polis.assets" do |app|
-        app.config.assets.precompile += %w(decidim_polis_manifest.js decidim/polis/action_plans.csv decidim/polis/meetings.csv decidim/polis/proposals.csv)
-      end
-
-      initializer "decidim_polis.public" do |app|
-        app.middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public")
+        app.config.assets.precompile += %w(decidim_polis_manifest.js)
       end
     end
   end
