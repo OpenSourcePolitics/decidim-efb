@@ -1,7 +1,11 @@
 ---
 fr:
   decidim:
-    polis:
-      features:
-        polis:
-          name: Conversation Pol.is
+    features:
+      polis:
+        name: Conversation Pol.is
+        settings:
+          global:
+            user_can_write: L'utilisateur peut rédiger un commentaire
+            user_can_vote: L'utilisateur peut voter
+            visualization: L'utilisateur peut voir toutes les conversations

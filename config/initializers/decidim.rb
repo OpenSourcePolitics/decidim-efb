@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "My Application Name"
+  config.application_name = "Decidim-efb"
   config.mailer_sender = "mako@osp.cat"
   config.authorization_handlers = ["Decidim::DummyAuthorizationHandler"]
 
