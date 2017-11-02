@@ -1,0 +1,5 @@
+base_locale: ca
+locales: [ca,es,fr,en]
+ignore_unused:
+- "decidim.features.polis.name"
+- "decidim.polis.*"

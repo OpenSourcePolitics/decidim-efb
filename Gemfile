@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", "0.7.1"
-gem "decidim-dataviz", path: "decidim-dataviz"
+gem "decidim-polis", path: "decidim-polis"
 # Uncomment the following line if you want to use decidim-assemblies plugin
 # gem "decidim-assemblies", "0.7.1"
 

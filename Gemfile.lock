@@ -1,7 +1,7 @@
 PATH
-  remote: decidim-dataviz
+  remote: decidim-polis
   specs:
-    decidim-dataviz (0.0.1)
+    decidim-polis (0.0.1)
       decidim-core
 
 GEM
@@ -579,8 +579,8 @@ DEPENDENCIES
   bootsnap
   byebug
   decidim (= 0.7.1)
-  decidim-dataviz!
   decidim-dev (= 0.7.1)
+  decidim-polis!
   faker (~> 1.8.4)
   letter_opener_web (~> 1.3.0)
   listen (~> 3.1.0)
