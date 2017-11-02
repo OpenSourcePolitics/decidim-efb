@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+<div class='polis' data-page_id=<%= params[:feature_id] %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw="true" data-ucv="true"> </div>
+<script async='true' src='https://pol.is/embed.js'> </script>
+<% else %>
+<div class='polis' data-page_id=<%= params[:feature_id] %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw="false" data-ucv="false"> </div>
+<script async='true' src='https://pol.is/embed.js'> </script>
+<% end %>
