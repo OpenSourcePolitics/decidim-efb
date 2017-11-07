@@ -1,4 +1,3 @@
-<% if current_user && current_user.admin? %>
 <div class="container">
   <ul class="list-inline clearfix">
       <li>
@@ -19,8 +18,13 @@
   </ul>
 </div>
 
+
+
+
+
+
+
 <br />
-<% end %>
 
 <% if user_signed_in? %>
 <div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %>> </div>
