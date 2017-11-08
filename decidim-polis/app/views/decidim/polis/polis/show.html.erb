@@ -1,31 +1,37 @@
 <% if current_user && current_user.admin? %>
-<div class="container">
-  <ul class="list-inline clearfix">
-      <li>
-	<%= link_to "Modération commentaires", "#", class: 'btn', style: 'border-radius: 170px; color: #ef604d; border-color: #ef604d; font-size: 20px; padding-left: 110px; padding-right: 25px' %>
-      </li>
-      <li>
-	<%= link_to "Statistiques", "#", class: 'btn', style: 'border-radius: 170px; color: #ef604d; border-color: #ef604d; font-size: 20px; padding-left: 20px; padding-right: 25px' %>
-      </li>
-      <li>
-	<%= link_to "Export", "#", class: 'btn', style: 'border-radius: 170px; color: #ef604d; border-color: #ef604d; font-size: 20px; padding-left: 20px; padding-right: 25px' %>
-      </li>
-      <li>
-	<%= link_to "Synthèse", "#", class: 'btn', style: 'border-radius: 170px; color: #ef604d; border-color: #ef604d; font-size: 20px; padding-left: 20px; padding-right: 25px' %>
-      </li>
-      <li>
-	<%= link_to "Modération participants", "#", class: 'btn', style: 'border-radius: 170px; color: #ef604d; border-color: #ef604d; font-size: 20px; padding-left: 20px; padding-right: 25px' %>
-      </li>
-  </ul>
-</div>
+  <div class="container links-container">
+    <ul class="list-inline clearfix append-admin-link">
+    </ul>
+  </div>
 
-<br />
+  <br />
 <% end %>
 
 <% if user_signed_in? %>
-<div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %>> </div>
-<script async='true' src='https://pol.is/embed.js'> </script>
-<% else %>
-<div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw="false" data-ucv="false" data-show_vis= "false"> </div>
-<script async='true' src='https://pol.is/embed.js'> </script>
+    <div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %>> </div>
+    <script async='true' src='https://pol.is/embed.js'> </script>
+  <% else %>
+    <div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw="false" data-ucv="false" data-show_vis= "false"> </div>
+    <script async='true' src='https://pol.is/embed.js'> </script>
 <% end %>
+
+<script type="text/javascript">
+  function getConversationId(){
+    return "3ywrd98jrx";
+  }
+
+  function completeUrl(){
+    var conversationId = getConversationId()
+
+    if(conversationId){
+      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/comments'> Modérations commentaires </a> </li>")
+      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/stats'> Statistiques </a> </li>")
+      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/export'> Export </a> </li>")
+      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/reports'> Synthèse </a> </li>")
+      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/participants'> Modération participants </a> </li>")
+    }
+  }
+
+  completeUrl()
+
+</script>

@@ -12,7 +12,7 @@ module Decidim
       end
 
       initializer "decidim_polis.assets" do |app|
-        app.config.assets.precompile += %w(decidim_polis_manifest.js)
+        app.config.assets.precompile += %w(decidim_polis_manifest.js decidim_polis_manifest.css)
       end
     end
   end

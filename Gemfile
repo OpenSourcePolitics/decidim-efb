@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby RUBY_VERSION
+ruby '2.4.1'
 
 gem "decidim", "0.7.1"
 gem "decidim-polis", path: "decidim-polis"
