@@ -1,11 +1,16 @@
-<% if current_user && current_user.admin? %>
   <div class="container links-container">
-    <ul class="list-inline clearfix append-admin-link">
-    </ul>
+	<% if (current_user && current_user.roles.include?("user_manager") || current_user && current_user.admin?) %>
+	    <ul class="list-inline clearfix appendModerateLink">
+			<% if current_user && current_user.admin? %>
+				<div class= "appendAdminLink list-inline">
+				</div>
+			<% end %>
+	    </ul>
+	<% end %>
+
   </div>
 
   <br />
-<% end %>
 
 <% if user_signed_in? %>
     <div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %>> </div>
@@ -24,11 +29,11 @@
     var conversationId = getConversationId()
 
     if(conversationId){
-      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/comments'> Modérations commentaires </a> </li>")
-      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/stats'> Statistiques </a> </li>")
-      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/export'> Export </a> </li>")
-      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/reports'> Synthèse </a> </li>")
-      $(".append-admin-link").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/participants'> Modération participants </a> </li>")
+      $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/comments'> Modérations commentaires </a> </li>")
+      $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/stats'> Statistiques </a> </li>")
+      $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/export'> Export </a> </li>")
+      $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/reports'> Synthèse </a> </li>")
+      $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/participants'> Modération participants </a></li>")
     }
   }
 
