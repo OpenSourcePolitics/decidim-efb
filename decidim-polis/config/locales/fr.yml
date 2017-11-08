@@ -6,6 +6,8 @@ fr:
         name: Conversation Pol.is
         settings:
           global:
-            user_can_write: L'utilisateur peut rédiger un commentaire
-            user_can_vote: L'utilisateur peut voter
-            visualization: L'utilisateur peut voir toutes les conversations
+            user_can_write: Désactiver les commentaires
+            user_can_vote: Désactiver les votes
+            visualization: Cacher la visualisation (si vous cochez ce paramètre vous ne pourrez plus activer la visualisation dans le futur)
+            title: Titre
+            description: Description
