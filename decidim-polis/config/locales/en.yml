@@ -3,7 +3,7 @@ en:
   decidim:
       features:
         polis:
-          name: Visualitzacions del PAM
+          name: Conversation Pol.is
           settings:
             global:
               user_can_write: Désactiver les commentaires
