@@ -5,9 +5,10 @@
 
 
 <% if user_signed_in? %>
-<div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %>> </div>
+<div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= $tab_word["Pol.is_id"]["#{current_organization.name}"] %> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %>> </div>
 <script async='true' src='https://pol.is/embed.js'> </script>
 <% else %>
-<div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw="false" data-ucv="false" data-show_vis= "false"> </div>
+<div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= $tab_word["Pol.is_id"]["#{current_organization.name}"] %> data-ucw="false" data-ucv="false" data-show_vis= "false"> </div>
 <script async='true' src='https://pol.is/embed.js'> </script>
 <% end %>
+
