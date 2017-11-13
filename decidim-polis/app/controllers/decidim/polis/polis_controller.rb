@@ -11,6 +11,7 @@ module Decidim
         @description = settings.description.html_safe
         @ucw = !settings.user_can_write?
         @ucv = !settings.user_can_vote?
+        @sign_in_social = !settings.sign_in_social?
         @show_vis = settings.visualization?
       end
     end

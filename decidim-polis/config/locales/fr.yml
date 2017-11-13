@@ -10,4 +10,5 @@ fr:
               user_can_vote: Désactiver les votes
               visualization: Cacher la visualisation (si vous cochez ce paramètre vous ne pourrez plus activer la visualisation dans le futur)
               title: Titre
+              sign_in_social: Désactiver la connexion via les réseaux sociaux
               description: Description
