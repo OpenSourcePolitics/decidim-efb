@@ -5,10 +5,6 @@ module Decidim
     # Exposes the polis resource so users can view them
     class PolisController < Decidim::Polis::ApplicationController
       def show
-        filepath = '/home/mako/decidim-efb/.file.json'
-        country = File.read(filepath)
-        @tab_word = JSON.parse(country)
-
         @feature = Feature.find(params[:feature_id])
         settings = @feature.settings
         @title = settings.title.capitalize
