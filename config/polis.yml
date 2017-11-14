@@ -1,0 +1,16 @@
+default: &default
+  enabled: true
+  site_id:
+    # "<decidim_organizations.name>" : "polis_site_id_XXXXXXXXXX"
+    "Senger and Sons": "polis_site_id_A29i1s5PR6ggeaMwgb"
+    "test 02": "sqdsqdsqdsqd"
+    "test 03": "yuteyaegdvs"
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
