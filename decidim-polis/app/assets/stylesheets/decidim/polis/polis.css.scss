@@ -1,6 +1,9 @@
+.polis-header{
+  padding: 0 20px 20px 0;
+}
 .links-container{
 	display: flex;
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .appendAdminLink{
@@ -9,7 +12,9 @@
 
 .admin-btn{
 	color: #ef604d;
-	font-size: 20px;
-	padding-left: 20px;
-	padding-right: 25px
+	font-size: 18px;
+  &:hover{
+    opacity: 0.6;
+    color: #ef604d;
+  }
 }

@@ -1,53 +1,58 @@
 <div class="row">
   <div class="columns medium-7 mediumlarge-8">
     <div class="section">
-      <div class= "polis-header" style= "padding: 0 20px 20px 20px">
+      <div class= "polis-header">
         <h2> <%= @title %> </h2>
         <p></p><p><%= @description %></p><p></p>
       </div>
       <div class="container links-container">
-  	    <% if (current_user && current_user.roles.include?("user_manager") || current_user && current_user.admin?) %>
-  	      <ul class="list-inline clearfix appendModerateLink">
-      			<% if current_user && current_user.admin? %>
-      				<div class= "appendAdminLink list-inline"></div>
-      			<% end %>
+  	    <% if (@moderator || @admin) %>
+          <span class= "label"> Admin Pol.is</span>
+          <span class= "heading6"> Modération </span>
+          <ul class="list-inline clearfix appendModerateLink">
   	      </ul>
+          <% if @admin %>
+            <span class= "heading6"> Données </span>
+            <ul class= "appendAdminLink list-inline">
+            </ul>
+          <% end %>
   	    <% end %>
       </div>
 
       <br />
 
       <% if user_signed_in? %>
-        <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name] %> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic=<%= @title %> data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-ucsh="false" data-ucsf="false"> </div>
-        <script async='true' src='https://pol.is/embed.js' style="margin-left: -111px"> </script>
+        <div class='polis column' data-page_id=<%= @feature.id %> data-site_id="polis_site_id_A29i1s5PR6ggeaMwgb" data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic=<%= @title %> data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-ucsh="false" data-ucsf="false"> </div>
+        <script async='true' src='https://preprod.pol.is/embedPreprod.js' style="margin-left: -111px"> </script>
       <% else %>
-        <div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name] %> data-ucw="false" data-ucv="false" data-show_vis= "false">
+        <div class='polis' data-page_id=<%= @feature.id %> data-site_id="polis_site_id_A29i1s5PR6ggeaMwgb" data-ucw="false" data-ucv="false" data-show_vis= "false">
         </div>
-        <script async='true' src='https://pol.is/embed.js'> </script>
+        <script async='true' src='https://preprod.pol.is/embedPreprod.js'> </script>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= @sign_in_social %>
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   function getConversationId(){
-    return "3ywrd98jrx";
+    window.addEventListener("message", function(event) {
+     var data = event.data||{};
+     if (!event.origin.match(/pol.is$/)) {
+       return;
+     }
+     var conversationId = data["conversation"].conversation_id;
+     completeUrl(conversationId)
+    })
   }
 
-  function completeUrl(){
-    var conversationId = getConversationId()
-
-    if(conversationId){
-      $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/comments'> Modérations commentaires </a> </li>")
-      $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/stats'> Statistiques </a> </li>")
-      $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/export'> Export </a> </li>")
-      $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/reports'> Synthèse </a> </li>")
-      $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversationId + "/participants'> Modération participants </a></li>")
-    }
+  function completeUrl(conversation_id){
+    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
+    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
+    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
+    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
+    $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
   }
 
-  completeUrl()
+  getConversationId()
 
-</script>
+</script> -->

@@ -1,0 +1,49 @@
+// = require jquery.browser
+// = require jquery
+// = require jquery_ujs
+// = require_self
+
+
+// function getConversationId(){
+//     window.addEventListener("message", function(event) {
+//      var data = event.data||{};
+//      if (!event.origin.match(/pol.is$/)) {
+//        return;
+//      }
+//      var conversationId = data["conversation"].conversation_id;
+//      completeUrl(conversationId)
+//     })
+//   }
+
+//   function completeUrl(conversation_id){
+//     $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Modérations commentaires </a> </li>")
+//     $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
+//     $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
+//     $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
+//     $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Modération participants </a></li>")
+//   }
+
+// $(document).load(function() {
+//   getConversationId();
+// });
+
+import jQuery from 'jquery'
+
+export default function() {
+  +function(getConversationId) {
+    window.addEventListener("message", function(event) {
+     var data = event.data||{};
+     if (!event.origin.match(/pol.is$/)) {
+       return;
+     }
+     var conversationId = data["conversation"].conversation_id;
+     completeUrl(conversationId)
+    })
+  } +function completeUrl(conversation_id) {
+     $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Modérations commentaires </a> </li>")
+    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
+    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
+    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
+    $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Modération participants </a></li>")
+  }(jQuery)
+}

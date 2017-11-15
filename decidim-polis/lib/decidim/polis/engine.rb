@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# require "jquery-rails"
 
 module Decidim
   module Polis
@@ -12,7 +13,7 @@ module Decidim
       end
 
       initializer "decidim_polis.assets" do |app|
-        app.config.assets.precompile += %w(decidim_polis_manifest.js decidim_polis_manifest.css)
+        app.config.assets.precompile += %w(decidim_polis_manifest.js6 decidim_polis_manifest.css)
       end
     end
   end
