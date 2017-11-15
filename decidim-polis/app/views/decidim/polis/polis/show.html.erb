@@ -28,7 +28,7 @@
         <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name] %> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic=<%= @title %> data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false"> </div>
       <script async='true' src='https://preprod.pol.is/embedPreprod.js' > </script>
       <% else %>
-        <div class='polis' data-page_id=<%= @feature.id %> data-site_id="polis_site_id_A29i1s5PR6ggeaMwgb" data-ucw="false" data-ucv="false" data-show_vis= "false">
+        <div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw="false" data-ucv="false" data-show_vis= "false">
         </div>
         <script async='true' src='https://preprod.pol.is/embedPreprod.js'> </script>
       <% end %>
