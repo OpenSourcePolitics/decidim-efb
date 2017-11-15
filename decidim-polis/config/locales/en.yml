@@ -1,12 +1,14 @@
 ---
 en:
   decidim:
-    features:
-      polis:
-        name: Pol.is conversation
-        settings:
-          global:
-            user_can_write: User can write a comment
-            user_can_vote: User can vote
-            visualization: User can see all conversations
-
+      features:
+        polis:
+          name: Conversation Pol.is
+          settings:
+            global:
+              user_can_write: Désactiver les commentaires
+              user_can_vote: Désactiver les votes
+              visualization: Cacher la visualisation (si vous cochez ce paramètre vous ne pourrez plus activer la visualisation dans le futur)
+              title: Titre
+              sign_in_social: Désactiver la connexion via les réseaux sociaux
+              description: Description

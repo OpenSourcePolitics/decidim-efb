@@ -1,24 +1,34 @@
-  <div class="container links-container">
-	<% if (current_user && current_user.roles.include?("user_manager") || current_user && current_user.admin?) %>
-	    <ul class="list-inline clearfix appendModerateLink">
-			<% if current_user && current_user.admin? %>
-				<div class= "appendAdminLink list-inline">
-				</div>
-			<% end %>
-	    </ul>
-	<% end %>
+<div class="row">
+  <div class="columns medium-7 mediumlarge-8">
+    <div class="section">
+      <div class= "polis-header" style= "padding: 0 20px 20px 20px">
+        <h2> <%= @title %> </h2>
+        <p></p><p><%= @description %></p><p></p>
+      </div>
+      <div class="container links-container">
+  	    <% if (current_user && current_user.roles.include?("user_manager") || current_user && current_user.admin?) %>
+  	      <ul class="list-inline clearfix appendModerateLink">
+      			<% if current_user && current_user.admin? %>
+      				<div class= "appendAdminLink list-inline"></div>
+      			<% end %>
+  	      </ul>
+  	    <% end %>
+      </div>
 
+      <br />
+
+      <% if user_signed_in? %>
+        <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= $tab_word["Pol.is_id"]["#{current_organization.name}"] %> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic=<%= @title %> data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %>> </div>
+          <script async='true' src='https://pol.is/embed.js' style="margin-left: -111px"> </script>
+      <% else %>
+        <div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= $tab_word["Pol.is_id"]["#{current_organization.name}"] %> data-ucw="false" data-ucv="false" data-show_vis= "false"> </div>
+        <script async='true' src='https://pol.is/embed.js'> </script>
+      <% end %>
+    </div>
   </div>
+</div>
 
-  <br />
-
-<% if user_signed_in? %>
-    <div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %>> </div>
-    <script async='true' src='https://pol.is/embed.js'> </script>
-  <% else %>
-    <div class='polis' data-page_id=<%= @feature.id %> data-site_id='polis_site_id_A29i1s5PR6ggeaMwgb' data-ucw="false" data-ucv="false" data-show_vis= "false"> </div>
-    <script async='true' src='https://pol.is/embed.js'> </script>
-<% end %>
+<%= @sign_in_social %>
 
 <script type="text/javascript">
   function getConversationId(){
@@ -40,3 +50,5 @@
   completeUrl()
 
 </script>
+
+
