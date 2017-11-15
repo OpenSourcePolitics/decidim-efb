@@ -5,20 +5,26 @@
         <h2> <%= @title %> </h2>
         <p><%= @description %></p>
       </div>
-      <div class="container links-container">
-  	    <% if (@moderator || @admin) %>
+      <div class="container links-container row">
+        <% if (@moderator || @admin) %>
+        <div class="columns mediumlarge-2 flex mgn">
           <span class= "label"> Admin Pol.is</span>
+        </div>
+        <div class="columns mediumlarge-5 flex">
           <p class= "h-link">
             Modération :
             <ul class="appendModerateLink">
   	        </ul>
           </p>
+        </div>
           <% if @admin %>
-            <p class= "h-link">
-              Données :
-              <ul class= "appendAdminLink ">
-              </ul>
-            </p>
+            <div class="columns mediumlarge-5 flex">
+              <p class= "h-link">
+                Données :
+                <ul class= "appendAdminLink ">
+                </ul>
+              </p>
+            </div>
           <% end %>
   	    <% end %>
       </div>

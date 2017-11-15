@@ -3,16 +3,18 @@
 }
 .links-container{
   display: flex;
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #fff;
   .h-link{
     text-transform: uppercase;
     letter-spacing: .03em;
     font-weight: 600;
     line-height: 27px;
-    margin-left: 85px!important;
   }
   li{
     list-style-type: none;
-    margin-top: -4px;
     margin-bottom: 10px;
   }
   .label{
@@ -21,7 +23,9 @@
     font-size: 17px;
   }
 }
-
+.flex{
+  display: flex;
+}
 .appendAdminLink{
 	display: inline;
 }
@@ -32,5 +36,22 @@
   &:hover{
     opacity: 0.6;
     color: #ef604d;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .appendAdminLink{
+    margin-left: 50px;
+  }
+
+  .mgn{
+    margin-top: 25px;
+  }
+
+  .links-container{
+    flex-direction: column;
+    .label{
+      margin-bottom: 25px;
+    }
   }
 }
