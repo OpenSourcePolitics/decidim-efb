@@ -1,0 +1,32 @@
+<% content_for :secondary_nav do %>
+  <div class="secondary-nav">
+    <div class="secondary-nav__title">
+      <%= t "decidim.admin.title.polis" %>
+    </div>
+    <div class="secondary-nav__actions">
+      <%= link_to t("actions.show", scope: "decidim.admin", name: t("pages.polis.show", scope: "decidim.admin")), ['show'], class: 'button expanded small' if can? :manage, Decidim::Polis %>
+    </div>
+
+    <div class="callout warning callout--full" data-closable>
+      <h2><b>edit me !</b></h2>
+<pre>
+decidim-polis/
+app/
+views/
+decidim/
+polis/
+admin/
+polis/
+show.html.erb
+</pre>
+      <button class="close-button" aria-label="Dismiss alert" type="button" data-close="">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    
+  </div>
+<% end %>
+
+<%= render "layouts/decidim/admin/application" do %>
+  <%= yield %>
+<% end %>
