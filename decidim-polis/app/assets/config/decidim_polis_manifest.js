@@ -1,1 +1,1 @@
-//= link decidim/polis/polis.js
+//= link decidim/polis/polis.js6
