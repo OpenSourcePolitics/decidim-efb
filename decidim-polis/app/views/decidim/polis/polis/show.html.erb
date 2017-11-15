@@ -3,27 +3,30 @@
     <div class="section">
       <div class= "polis-header">
         <h2> <%= @title %> </h2>
-        <p></p><p><%= @description %></p><p></p>
+        <p><%= @description %></p>
       </div>
       <div class="container links-container">
   	    <% if (@moderator || @admin) %>
           <span class= "label"> Admin Pol.is</span>
-          <span class= "heading6"> Modération </span>
-          <ul class="list-inline clearfix appendModerateLink">
-  	      </ul>
+          <p class= "h-link">
+            Modération :
+            <ul class="appendModerateLink">
+  	        </ul>
+          </p>
           <% if @admin %>
-            <span class= "heading6"> Données </span>
-            <ul class= "appendAdminLink list-inline">
-            </ul>
+            <p class= "h-link">
+              Données :
+              <ul class= "appendAdminLink ">
+              </ul>
+            </p>
           <% end %>
   	    <% end %>
       </div>
-
       <br />
 
       <% if user_signed_in? %>
-        <div class='polis column' data-page_id=<%= @feature.id %> data-site_id="polis_site_id_A29i1s5PR6ggeaMwgb" data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic=<%= @title %> data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-ucsh="false" data-ucsf="false"> </div>
-        <script async='true' src='https://preprod.pol.is/embedPreprod.js' style="margin-left: -111px"> </script>
+        <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name] %> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic=<%= @title %> data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false"> </div>
+        <script async='true' src='https://preprod.pol.is/embedPreprod.js' > </script>
       <% else %>
         <div class='polis' data-page_id=<%= @feature.id %> data-site_id="polis_site_id_A29i1s5PR6ggeaMwgb" data-ucw="false" data-ucv="false" data-show_vis= "false">
         </div>
@@ -33,7 +36,7 @@
   </div>
 </div>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   function getConversationId(){
     window.addEventListener("message", function(event) {
      var data = event.data||{};
@@ -46,13 +49,13 @@
   }
 
   function completeUrl(conversation_id){
-    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
+    $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
+    $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
     $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
     $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
     $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
-    $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
   }
 
   getConversationId()
 
-</script> -->
+</script>
