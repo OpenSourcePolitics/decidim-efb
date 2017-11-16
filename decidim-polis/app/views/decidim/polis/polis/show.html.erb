@@ -1,37 +1,57 @@
 <div class="row">
   <div class="columns medium-7 mediumlarge-8">
     <div class="section">
-      <div class= "polis-header">
+      <div>
         <h2> <%= @title %> </h2>
         <p><%= @description %></p>
       </div>
-      <div class="container links-container row">
-        <% if (@moderator || @admin) %>
-        <div class="columns mediumlarge-2 flex mgn">
-          <span class= "label"> Admin Pol.is</span>
-        </div>
-        <div class="columns mediumlarge-5 flex">
-          <p class= "h-link">
-            Modération :
-            <ul class="appendModerateLink">
-  	        </ul>
-          </p>
-        </div>
-          <% if @admin %>
-            <div class="columns mediumlarge-5 flex">
-              <p class= "h-link">
-                Données :
-                <ul class= "appendAdminLink ">
-                </ul>
-              </p>
-            </div>
-          <% end %>
-  	    <% end %>
+    </div>
+  </div>
+  <div class="columns medium-7 mediumlarge-4">
+  </div>
+</div>
+<div class= "row">
+  <div class="columns medium-7 mediumlarge-8">
+    <div class="container links-container row">
+      <% if (@moderator || @admin) %>
+      <div class="columns mediumlarge-2 flex mgn">
+        <span class= "label"> Admin Pol.is</span>
       </div>
-      <br />
-
+      <div class="columns mediumlarge-5 flex">
+        <p class= "h-link">
+          Modération :
+          <ul class="appendModerateLink">
+	        </ul>
+        </p>
+      </div>
+        <% if @admin %>
+          <div class="columns mediumlarge-5 flex">
+            <p class= "h-link">
+              Données :
+              <ul class= "appendAdminLink ">
+              </ul>
+            </p>
+          </div>
+        <% end %>
+	    <% end %>
+    </div>
+  </div>
+  <div class="columns medium-6 mediumlarge-4">
+    <div class= "block-right">
+      <center>
+        <%= image_tag "question-circle.svg", alt: "image bleue", width: 80, height: 30 %>
+        <h2><b>Comment ça marche ?</b></h2>
+        <h5><b>Bienvenue sur un nouveau type de discussion.</b></h5>
+      </center>
+    </div>
+  </div>
+</div>
+  <br />
+<div class="row">
+  <div class="columns medium-7 mediumlarge-8">
+    <div class="section">
       <% if user_signed_in? %>
-        <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name] %> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic=<%= @title %> data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false"> </div>
+        <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic=<%= @title %> data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false"> </div>
       <script async='true' src='https://preprod.pol.is/embedPreprod.js' > </script>
       <% else %>
         <div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw="false" data-ucv="false" data-show_vis= "false">
@@ -39,6 +59,34 @@
         <script async='true' src='https://preprod.pol.is/embedPreprod.js'> </script>
       <% end %>
     </div>
+  </div>
+  <div class="columns medium-6 mediumlarge-4">
+    <ol class="timeline">
+      <li class="timeline__item">
+        <div class="timeline__phase"><b style="color: white">1</b></div>
+        <div class="timeline__info">
+          <div class="timeline__content">Votez sur les opinions des autres.</div>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__phase"><b style="color: white">2</b></div>
+        <div class="timeline__info">
+          <div class="timeline__content">Exprimez la votre.</div>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__phase"><b style="color: white">3</b></div>
+        <div class="timeline__info">
+          <div class="timeline__content">A partir de 7 votants vous pouvez observer des groupes d'opinion se former.</div>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__phase"><b style="color: white">4</b></div>
+        <div class="timeline__info">
+          <div class="timeline__content">Tentez de faire émerger un consensus en proposant de nouveaux points de vue (Les groupe d'opinion évoluent en temps réel).</div>
+        </div>
+      </li>
+    <ol>
   </div>
 </div>
 
