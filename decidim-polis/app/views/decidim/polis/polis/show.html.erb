@@ -15,6 +15,31 @@
       <h5><b>Bienvenue sur un nouveau type de discussion.</b></h5>
     </center>
   </div>
+
+  <div class="container links-container row">
+    <% if (@moderator || @admin) %>
+    <div class="columns mediumlarge-2 flex mgn">
+      <span class= "label"> Admin Pol.is</span>
+    </div>
+    <div class="columns mediumlarge-5 flex">
+      <p class= "h-link">
+	Modération :
+	<ul class="appendModerateLink">
+	</ul>
+      </p>
+    </div>
+    <% if @admin %>
+    <div class="columns mediumlarge-5 flex">
+      <p class= "h-link">
+	Données :
+	<ul class= "appendAdminLink ">
+	</ul>
+      </p>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+  <br />
   
   <div class="columns medium-7 mediumlarge-8">
     <div class="section">
