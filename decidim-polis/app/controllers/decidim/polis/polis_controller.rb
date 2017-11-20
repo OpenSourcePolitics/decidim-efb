@@ -6,6 +6,7 @@ module Decidim
     class PolisController < Decidim::Polis::ApplicationController
       def show
         @feature = Feature.find(params[:feature_id])
+        @halp = participatory_process_slug
         settings = @feature.settings
         @title = settings.title.capitalize
         @description = settings.description.html_safe
