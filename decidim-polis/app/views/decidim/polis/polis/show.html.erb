@@ -1,8 +1,8 @@
 <div class= "row">
-  <div class="columns medium-7 mediumlarge-8">
+  <div class="columns smallmedium-12 mediumlarge-8">
+    <% if (@moderator || @admin) %>
     <!-- pol.is admin buttons section -->
-      <% if (@moderator || @admin) %>
-    <div class="container links-container row">
+    <div class="container links-container row" style="margin-left: 0px; margin-right: 0px;">
       <div class="columns mediumlarge-2 flex mgn">
 	<span class= "label"> Admin Pol.is</span>
       </div>
@@ -25,7 +25,7 @@
     <% end %>
     <% end %>
     <!-- end -->
-    <br />
+     <br />
     <!-- title and description section -->
     <div class="section">
       <div>
@@ -37,7 +37,7 @@
     <!-- pol.is embed section -->
     <div class="section">
       <% if user_signed_in? %>
-      <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic="<%= @title %>" data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false"> </div>
+      <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic="<%= @title %>" data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false" style="padding-left:0px;padding-right:0px;"> </div>
       <script async='true' src='https://preprod.pol.is/embedPreprod.js' > </script>
       <% else %>
       <div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw="false" data-ucv="false" data-show_vis= "false" data-ucst="false">
@@ -47,9 +47,10 @@
     </div>
     <!-- end -->
   </div>
-  <div class="columns medium-6 mediumlarge-4">
+  <div class="columns smallmedium-12 mediumlarge-4">
     <!-- question mark section -->
     <div class="block-right">
+      <br />
       <center>
 	<%= image_tag "question-circle.svg", alt: "image bleue", width: 80, height: 30 %>
 	<h2><b>Comment ça marche ?</b></h2>
