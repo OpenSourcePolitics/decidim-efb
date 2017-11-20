@@ -1,117 +1,113 @@
-<% if (@moderator || @admin) %>
 <div class= "row">
   <div class="columns medium-7 mediumlarge-8">
+    <!-- pol.is admin buttons section -->
+      <% if (@moderator || @admin) %>
     <div class="container links-container row">
       <div class="columns mediumlarge-2 flex mgn">
-        <span class= "label"> Admin Pol.is</span>
+	<span class= "label"> Admin Pol.is</span>
       </div>
       <div class="columns mediumlarge-5 flex">
-        <p class= "h-link">
-          Modération :
-          <ul class="appendModerateLink">
+	<p class= "h-link">
+	  Modération :
+	  <ul class="appendModerateLink">
 	  </ul>
-        </p>
+	</p>
       </div>
-        <% if @admin %>
-          <div class="columns mediumlarge-5 flex">
-            <p class= "h-link">
-              Données :
-              <ul class= "appendAdminLink ">
-              </ul>
-            </p>
-          </div>
-        <% end %>
-	    <% end %>
+      <% if @admin %>
+      <div class="columns mediumlarge-5 flex">
+	<p class= "h-link">
+	  Données :
+	  <ul class= "appendAdminLink ">
+	  </ul>
+	</p>
+      </div>
     </div>
-  </div>
-</div>
-<br />
-
-<div class="row">
-  <div class="columns medium-7 mediumlarge-8">
+    <% end %>
+    <% end %>
+    <!-- end -->
+    <br />
+    <!-- title and description section -->
     <div class="section">
       <div>
-        <h2> <%= @title %> </h2>
-        <p><%= @description %></p>
+	<h2> <%= @title %> </h2>
+	<p><%= @description %></p>
       </div>
     </div>
-  </div>
-  <div class="columns medium-6 mediumlarge-4">
-    <div class="block-right">
-      <center>
-        <%= image_tag "question-circle.svg", alt: "image bleue", width: 80, height: 30 %>
-        <h2><b>Comment ça marche ?</b></h2>
-        <h5><b>Bienvenue sur un nouveau type de discussion.</b></h5>
-      </center>
-    </div>
-  </div>
-  <div class="columns medium-7 mediumlarge-4">
-  </div>
-</div>
-
-<div class="row">
-  <div class="columns medium-7 mediumlarge-8">
+    <!-- end -->
+    <!-- pol.is embed section -->
     <div class="section">
       <% if user_signed_in? %>
-        <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic="<%= @title %>" data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false"> </div>
+      <div class='polis column' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic="<%= @title %>" data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false"> </div>
       <script async='true' src='https://preprod.pol.is/embedPreprod.js' > </script>
       <% else %>
-        <div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw="false" data-ucv="false" data-show_vis= "false" data-ucst="false">
-        </div>
-        <script async='true' src='https://preprod.pol.is/embedPreprod.js'> </script>
+      <div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw="false" data-ucv="false" data-show_vis= "false" data-ucst="false">
+      </div>
+      <script async='true' src='https://preprod.pol.is/embedPreprod.js'> </script>
       <% end %>
     </div>
+    <!-- end -->
   </div>
   <div class="columns medium-6 mediumlarge-4">
-    <ol class="timeline">
-      <li class="timeline__item">
-        <div class="timeline__phase"><b style="color: white">1</b></div>
-        <div class="timeline__info">
-          <div class="timeline__content">Votez sur les opinions des autres.</div>
-        </div>
-      </li>
-      <li class="timeline__item">
-        <div class="timeline__phase"><b style="color: white">2</b></div>
-        <div class="timeline__info">
-          <div class="timeline__content">Exprimez la votre.</div>
-        </div>
-      </li>
-      <li class="timeline__item">
-        <div class="timeline__phase"><b style="color: white">3</b></div>
-        <div class="timeline__info">
-          <div class="timeline__content">A partir de 7 votants vous pouvez observer des groupes d'opinion se former.</div>
-        </div>
-      </li>
-      <li class="timeline__item">
-        <div class="timeline__phase"><b style="color: white">4</b></div>
-        <div class="timeline__info">
-          <div class="timeline__content">Tentez de faire émerger un consensus en proposant de nouveaux points de vue (Les groupe d'opinion évoluent en temps réel).</div>
-        </div>
-      </li>
-    <ol>
+    <!-- question mark section -->
+    <div class="block-right">
+      <center>
+	<%= image_tag "question-circle.svg", alt: "image bleue", width: 80, height: 30 %>
+	<h2><b>Comment ça marche ?</b></h2>
+	<h5><b>Bienvenue sur un nouveau type de discussion.</b></h5>
+      </center>
+    </div>
+    <!-- end -->
+    <!-- timeline helper section -->
+    <div class="block-right">
+      <ol class="timeline">
+	<li class="timeline__item">
+	  <div class="timeline__phase"><b style="color: white">1</b></div>
+	  <div class="timeline__info">
+	    <div class="timeline__content">Votez sur les opinions des autres.</div>
+	  </div>
+	</li>
+	<li class="timeline__item">
+	  <div class="timeline__phase"><b style="color: white">2</b></div>
+	  <div class="timeline__info">
+	    <div class="timeline__content">Exprimez la votre.</div>
+	  </div>
+	</li>
+	<li class="timeline__item">
+	  <div class="timeline__phase"><b style="color: white">3</b></div>
+	  <div class="timeline__info">
+	    <div class="timeline__content">A partir de 7 votants vous pouvez observer des groupes d'opinion se former.</div>
+	  </div>
+	</li>
+	<li class="timeline__item">
+	  <div class="timeline__phase"><b style="color: white">4</b></div>
+	  <div class="timeline__info">
+	    <div class="timeline__content">Tentez de faire émerger un consensus en proposant de nouveaux points de vue (Les groupe d'opinion évoluent en temps réel).</div>
+	  </div>
+	</li>
+      </ol>
+    </div>
+    <!-- end -->
   </div>
 </div>
-
+<!-- pol.is js script -->
 <script type="text/javascript">
   function getConversationId(){
-    window.addEventListener("message", function(event) {
-     var data = event.data||{};
-     if (!event.origin.match(/pol.is$/)) {
-       return;
-     }
-     var conversationId = data["conversation"].conversation_id;
-     completeUrl(conversationId)
-    })
+  window.addEventListener("message", function(event) {
+  var data = event.data||{};
+  if (!event.origin.match(/pol.is$/)) {
+  return;
   }
-
+  var conversationId = data["conversation"].conversation_id;
+  completeUrl(conversationId)
+  })
+  }
   function completeUrl(conversation_id){
-    $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
-    $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
-    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
-    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
-    $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
+  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
+  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
   }
-
   getConversationId()
-
 </script>
+<!-- end -->
