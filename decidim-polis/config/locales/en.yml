@@ -8,7 +8,8 @@ en:
             global:
               user_can_write: Désactiver les commentaires
               user_can_vote: Désactiver les votes
-              visualization: Cacher la visualisation (si vous cochez ce paramètre vous ne pourrez plus activer la visualisation dans le futur)
+              visualization: Déactiver la visualisation (si vous n'activez pas la visualisation vous ne pourrez plus l'activer dans le futur)
               title: Titre
+              conv_id: Pol.is ID (Créez un compte Pol.is et réconpérez votre conversation_id)
               sign_in_social: Désactiver la connexion via les réseaux sociaux
               description: Description
