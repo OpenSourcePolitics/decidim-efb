@@ -103,11 +103,11 @@
   })
   }
   function completeUrl(conversation_id){
-  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
-  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
-  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
-  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
-  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
+  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
+  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
   }
   getConversationId()
 </script>
