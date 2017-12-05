@@ -10,6 +10,7 @@ module Decidim
         settings = @feature.settings
         @title = settings.title.capitalize
         @description = settings.description.html_safe
+        binding.pry
         @ucw = !settings.user_can_write?
         @ucv = !settings.user_can_vote?
         @sign_in_social = !settings.sign_in_social?
