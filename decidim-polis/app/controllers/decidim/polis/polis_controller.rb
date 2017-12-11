@@ -17,6 +17,7 @@ module Decidim
         @ucv = current_settings.user_can_vote?
         @moderator = moderator?
         @admin = admin?
+        @langue = langue?
       end
 
       private
@@ -27,6 +28,10 @@ module Decidim
 
       def moderator?
         current_user && current_user.roles.include?("user_manager")
+      end
+
+      def langue?
+        locale
       end
     end
   end
