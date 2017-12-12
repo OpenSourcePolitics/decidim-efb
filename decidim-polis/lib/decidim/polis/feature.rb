@@ -11,8 +11,11 @@ Decidim.register_feature(:polis) do |feature|
     settings.attribute :title, type: :text
     settings.attribute :description, type: :text, editor: true
     settings.attribute :sign_in_social, type: :boolean, default: false
+    settings.attribute :visualization, type: :boolean, default: false
+  end
+  
+  feature.settings(:step) do |settings|
     settings.attribute :user_can_write, type: :boolean, default: false
     settings.attribute :user_can_vote, type: :boolean, default: false
-    settings.attribute :visualization, type: :boolean, default: false
   end
 end

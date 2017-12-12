@@ -37,7 +37,7 @@
     <!-- pol.is embed section -->
     <div class="section">
       <% if user_signed_in? %>
-      <div class='polis column' data-page_id="<%= @feature.id %><%= @process %>" data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic="<%= @title %>" data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false" style="padding-left:0px;padding-right:0px;"> </div>
+      <div class='polis column' data-page_id="<%= @feature.id %><%= @process %>" data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw=<%= @ucw %> data-ucv=<%= @ucv %> data-show_vis= <%= @show_vis %> data-border="none" data-topic="<%= @title %>" data-ucst="false" data-auth_opt_allow_3rdparty=<%= @sign_in_social %> data-auth_opt_fb=<%= @sign_in_social %> data-auth_opt_tw=<%= @sign_in_social %> data-ucsh="false" data-ucsf="0" data-ui_lang=<%= @langue %> style="padding-left:0px;padding-right:0px;"> </div>
       <script async='true' src='https://preprod.pol.is/embedPreprod.js' > </script>
       <% else %>
       <div class='polis' data-page_id=<%= @feature.id %> data-site_id=<%= Rails.application.config.polis["site_id"][current_organization.name]%> data-ucw="false" data-ucv="false" data-show_vis= "false" data-ucst="false" style="padding-left:0px;padding-right:0px;">
@@ -103,11 +103,11 @@
   })
   }
   function completeUrl(conversation_id){
-  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
-  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
-  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
-  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
-  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
+  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/comments'> Commentaires </a> </li>")
+  $(".appendModerateLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/participants'> Participants </a></li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/stats'> Statistiques </a> </li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/export'> Export </a> </li>")
+  $(".appendAdminLink").append("<li><a class= 'btn admin-btn' target= 'blank' href= 'https://pol.is/m/"+ conversation_id + "/reports'> Synthèse </a> </li>")
   }
   getConversationId()
 </script>

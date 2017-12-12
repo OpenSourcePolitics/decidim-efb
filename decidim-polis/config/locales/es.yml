@@ -3,14 +3,13 @@ es:
   decidim:
       features:
         polis:
-          name: Visualizaciones del PAM
+          name: Conversation Pol.is
           settings:
             global:
-              user_can_write: Désactiver les commentaires
-              user_can_vote: Désactiver les votes
-              visualization: Cacher la visualisation (si vous cochez ce paramètre vous ne pourrez plus activer la visualisation dans le futur)
               title: Titre
-              sign_in_social: Désactiver la connexion via les réseaux sociaux
               description: Description
-
-
+              visualization: Désactiver la visualisation (si vous cochez ce paramètre lors de la création de votre conversation, il ne sera plus modifiable par la suite. Pour le modifier il faudra vous rendre dans l'admin de Pol.is)
+              sign_in_social: Activer la connexion via les réseaux sociaux (si vous cochez ce paramètre lors de la création de votre conversation, il ne sera plus modifiable par la suite. Pour le modifier il faudra vous rendre dans l'admin de Pol.is)
+            step:
+              user_can_write: Activer les commentaires
+              user_can_vote: Activer les votes

@@ -8,14 +8,16 @@ module Decidim
         @feature = Feature.find(params[:feature_id])
         @process = params[:participatory_process_slug]
         settings = @feature.settings
+        step_settings = @feature.step_settings
         @title = settings.title.capitalize
         @description = settings.description.html_safe
-        @ucw = !settings.user_can_write?
-        @ucv = !settings.user_can_vote?
-        @sign_in_social = !settings.sign_in_social?
-        @show_vis = settings.visualization?
+        @sign_in_social = settings.sign_in_social?
+        @show_vis = !settings.visualization?
+        @ucw = current_settings.user_can_write?
+        @ucv = current_settings.user_can_vote?
         @moderator = moderator?
         @admin = admin?
+        @langue = langue?
       end
 
       private
@@ -26,6 +28,10 @@ module Decidim
 
       def moderator?
         current_user && current_user.roles.include?("user_manager")
+      end
+
+      def langue?
+        locale
       end
     end
   end
