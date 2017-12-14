@@ -30,7 +30,7 @@
     <div class="section">
       <div>
 	<h2> <%= translated_attribute @settings.title  %> </h2>
-	<p><%= translated_attribute @settings.description %></p>
+	<p><%= translated_attribute (@settings.description).html_safe %></p>
       </div>
     </div>
     <!-- end -->
