@@ -8,8 +8,8 @@ Decidim.register_feature(:polis) do |feature|
   feature.stylesheet = "decidim/polis/polis"
 
   feature.settings(:global) do |settings|
-    settings.attribute :title, type: :text
-    settings.attribute :description, type: :text, editor: true
+    settings.attribute :title, type: :text, translated: true
+    settings.attribute :description, type: :text, editor: true, translated: true
     settings.attribute :sign_in_social, type: :boolean, default: false
     settings.attribute :visualization, type: :boolean, default: false
   end

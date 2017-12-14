@@ -9,7 +9,8 @@ module Decidim
         @process = params[:participatory_process_slug]
         settings = @feature.settings
         step_settings = @feature.step_settings
-        @title = settings.title.capitalize
+        # @title = settings.title.capitalize.locale
+        translated(settings.title, locale)
         @description = settings.description.html_safe
         @sign_in_social = settings.sign_in_social?
         @show_vis = !settings.visualization?
