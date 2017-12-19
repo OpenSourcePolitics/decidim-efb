@@ -16,6 +16,7 @@ module Decidim
         @moderator = moderator?
         @admin = admin?
         @langue = langue?
+        # binding.pry
       end
 
       private
