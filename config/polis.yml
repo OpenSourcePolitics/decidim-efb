@@ -2,9 +2,9 @@ default: &default
   enabled: true
   site_id:
     # "<decidim_organizations.name>" : "polis_site_id_XXXXXXXXXX"
-    "Test_Paul_hîsse": "polis_site_id_A29i1s5PR6ggeaMwgb"
-    "Developement": "polis_site_id_A29i1s5PR6ggeaMwgb"
-    "fedict": "polis_site_id_A29i1s5PR6ggeaMwgb"
+    "Test_Paul_hîsse": "polis_site_id_XXXXXXXXXXXXXX"
+    "Developement": "polis_site_id_XXXXXXXXXXXXXXXXX"
+    "fedict": "polis_site_id_XXXXXXXXXXXXXXXXX"
   fr:
     "titre_message": "Participer au débat"
     "texte_message_1": "Pour participer au débat"
