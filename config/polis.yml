@@ -1,6 +1,6 @@
 default: &default
   enabled: true
-  site_id: "polis_site_id_XXXXXXXXXX"
+  site_id: "polis_site_id_A29i1s5PR6ggeaMwgb"
     # "<decidim_organizations.name>" : "polis_site_id_XXXXXXXXXX"
 
 development:
